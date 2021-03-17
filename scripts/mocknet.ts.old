@@ -1,38 +1,38 @@
 import { pubKeyfromPrivKey, publicKeyToString } from "@stacks/transactions";
 
 // from default public Stacks.toml file
-export const ADDR1 = "ST380Y4PNAPGY1JJ26P3AZ3S1B6QE43AHH46SMS1B";
-export const ADDR2 = "ST1GSY3QDKVNCJB7J452VCRG6PVH7RQQPGX24MMR9";
-export const ADDR3 = "ST1Y3GCS2BXYR0N273R72JB7E1VNH9V2PVM6NPH4W";
+export const ADDR1 = "STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6";
+export const ADDR2 = "ST11NJTTKGVT6D1HY4NJRVQWMQM7TVAR091EJ8P2Y";
+export const ADDR3 = "ST1HB1T8WRNBYB0Y3T7WXZS38NKKPTBR3EG9EPJKR";
 export const ADDR4 = "STRYYQQ9M8KAF4NS7WNZQYY59X93XEKR31JP64CP";
 
 // from personal public Stacks.toml file
-export const ADDR5 = "ST2ZZ73DH4SHW6Z9SHV141X6Y16NBY7XMWEHJ6373";
+export const ADDR5 = "ST2ZRX0K27GW0SP3GJCEMHD95TQGJMKB7G9Y0X1MH";
 
 export const testnetKeys: { secretKey: string; stacksAddress: string }[] = [
   {
     secretKey:
-      "213d180b5113835831208364cd2d1110ed8f8386c0f3129dc63f72b527ffc48c01",
+      "cb3df38053d132895220b9ce471f6b676db5b9bf0b4adefb55f2118ece2478df01",
     stacksAddress: ADDR1,
   },
   {
     secretKey:
-      "07c59053e7a300a093b835226afd486e634de507f95e0bc31ae60b30dc0c0e3f01",
+      "21d43d2ae0da1d9d04cfcaac7d397a33733881081f0b2cd038062cf0ccbb752601",
     stacksAddress: ADDR2,
   },
   {
     secretKey:
-      "762bf312de5945f006417eb602d0f0abfef44338c07954ee785f08f03f753c6b01",
+      "c71700b07d520a8c9731e4d0f095aa6efb91e16e25fb27ce2b72e7b698f8127a01",
     stacksAddress: ADDR3,
   },
   {
     secretKey:
-      "a964b69c5e604a1fc956ce4e08febea76d67ba1dcf20a799556c32a6f537e69301",
+      "e75dcb66f84287eaf347955e94fa04337298dbd95aa0dbb985771104ef1913db01",
     stacksAddress: ADDR4,
   },
   {
     secretKey:
-      "316e9894649c3e5b5099e328449b68a48a50dee18f1f51c3707eeb621924ec7f01",
+      "b8d99fd45da58038d630d9855d3ca2466e8e0f89d3894c4724f0efc9ff4b51f001",
     stacksAddress: ADDR5,
   },
 ];

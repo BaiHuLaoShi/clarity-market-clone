@@ -26,28 +26,29 @@ const BigNum = require("bn.js");
 //
 /// Contract calls
 //
-async function createMonster(monsterName: string) {
-  console.log("create monster");
+async function createHai(haiName: string) {
+  console.log("create hai");
 
   const transaction = await makeContractCall({
     contractAddress,
-    contractName: "monsters",
-    functionName: "create-monster",
-    functionArgs: [bufferCVFromString(monsterName)],
+    contractName: "hais",
+    functionName: "create-hai",
+    functionArgs: [bufferCVFromString(haiName)],
     senderKey: secretKey,
     network,
+    bnsLookupURL,
   });
 
   return handleTransaction(transaction);
 }
 
-async function feedMonster(monsterId: number) {
-  console.log("feed monster");
+async function renewHai(haiId: number) {
+  console.log("renew hai");
   const transaction = await makeContractCall({
     contractAddress,
-    contractName: "monsters",
-    functionName: "feed-monster",
-    functionArgs: [uintCV(monsterId)],
+    contractName: "hais",
+    functionName: "renew-hai",
+    functionArgs: [uintCV(haiId)],
     senderKey: secretKey2,
     network,
   });
@@ -55,7 +56,7 @@ async function feedMonster(monsterId: number) {
   return handleTransaction(transaction);
 }
 
-async function bid(trait: string, monsterId: number, price: number) {
+async function bid(trait: string, haiId: number, price: number) {
   console.log("bid for tradable");
   const transaction = await makeContractCall({
     contractAddress,
@@ -63,7 +64,7 @@ async function bid(trait: string, monsterId: number, price: number) {
     functionName: "bid",
     functionArgs: [
       contractPrincipalCV(contractAddress, trait),
-      uintCV(monsterId),
+      uintCV(haiId),
       uintCV(price),
     ],
     senderKey: secretKey2,
@@ -132,34 +133,18 @@ async function mintNFTs() {
       await mintNFTs();
     case 2:
       await deployContract("nft-trait", "../clarity-smart-contracts/contracts/sips/nft-trait.clar");
-      //await deployContract("boom-nfts-v3", "../../../gitlab/riot.ai/boom.money/contracts/boom-nfts.clar");
       break;
     case 1:
-      //await faucetCall("ST314JC8J24YWNVAEJJHQXS5Q4S9DX1FW5Z9DK9NT")
-      //await faucetCall("ST33GW755MQQP6FZ58S423JJ23GBKK5ZKH3MGR55N");
+
       await faucetCall("ST2MY1BVKR8W8NF58N2GX6JDZDRT5CXP6RVZ097M4");
-      //await faucetCall("ST9SW39M98MZXBGWSDVN228NW1NWENWCF321GWMK");
-      //await faucetCall("ST12EY99GS4YKP0CP2CFW6SEPWQ2CGVRWK5GHKDRV");
-      //await faucetCall("ST1CV2J4FK96CQM2TNMABV5YBF620R175GCVHM192");
-      //await faucetCall("ST2NM3E9MAWWRNGFEKW75QR4XXVA856N4MHNMYA3T");
       break;
     default:
       await deployContract("tradables");
       await deployContract("market");
-      await deployContract("monsters");
+      await deployContract("hais");
       await deployContract("constant-tradables");
 
-      /*
-      await deployContract("monsters");
-      await deployContract("market");
-      */
 
-      // uncomment once #92 is fixed
-      // await bid("constant-tradables", 1, 100);
-
-      //await createMonster("Black Tiger");
-      //await feedMonster(1);
-      // await bid("monsters", 1, 100);
       break;
   }
 })(0);
