@@ -44,7 +44,7 @@ const keys = mocknet
   ? testnetKeyMap[ADDR5]
   : JSON.parse(
       fs
-        .readFileSync("../../blockstack/stacks-blockchain/keychain2.json")
+        .readFileSync("keychain.json")
         .toString()
     );
 

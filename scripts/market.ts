@@ -36,7 +36,6 @@ async function createHai(haiName: string) {
     functionArgs: [bufferCVFromString(haiName)],
     senderKey: secretKey,
     network,
-    bnsLookupURL,
   });
 
   return handleTransaction(transaction);

@@ -1,7 +1,5 @@
 # Clarity Marketplace
 
-![marketplace](marketplace.jpg)
-
 Clarity smart contract for a marketplace of tradable assets (some kind of basic NFTs)
 
 (Inspired by the marketplace of monstereos.io)
